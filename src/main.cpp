@@ -15,13 +15,14 @@
 #include <FS.h>
 #include <LittleFS.h>
 #include <Update.h>
+#include "secrets.h"
 
 AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");           // access at ws://[esp ip]/ws
 AsyncEventSource events("/events"); // event source (Server-Sent events)
 
-const char *ssid = "westwood";
-const char *password = "MadiRyan21";
+const char *ssid = WIFI_SSID;
+const char *password = WIFI_PASSWORD;
 
 // flag to use from web update to reboot the ESP
 bool shouldReboot = false;
